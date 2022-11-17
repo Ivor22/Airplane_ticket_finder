@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jeftini letovi</title>
+    <link rel="icon" type="image/x-icon" href="/static/fav_plane.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">// <![CDATA[
+            function loading(){
+                $("#loading").show();
+                $("#content").hide();       
+            }
+    // ]]></script>
+    <style>
+            body, html {
+          height: 100%;
+          color: white;
+        }
+        
+        .bg { 
+          /* The image used */
+          background-image: url("/static/wallpaperflare-cropped.jpg");
+        
+          /* Full height */
+          height: 100%; 
+        
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        form[name="forma2"] {
+              display:{{dif2}};
+            }
+        div[name="unesena_forma2"] {
+            display:{{diuf2}};
+            background-color: #0D6EFD;
+            width: 400px;
+            border: 15px;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px;
+            opacity: .85;
+            }
+        .table-responsive {
+            display:{{dit1}}    
+            }
+        
+        div#loading {
+        width: 350px;
+        height: 350px;
+        display: none;
+<!--        background: url(/static/L3.gif) no-repeat; -->
+        cursor: wait;
+        }
+        
+        .lds-spinner {
+          color: official;
+          display: inline-block;
+          position: relative;
+          width: 80px;
+          height: 80px;
+        }
+        .lds-spinner div {
+          transform-origin: 40px 40px;
+          animation: lds-spinner 1.2s linear infinite;
+        }
+        .lds-spinner div:after {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 3px;
+          left: 37px;
+          width: 6px;
+          height: 18px;
+          border-radius: 20%;
+          background: #fff;
+        }
+        .lds-spinner div:nth-child(1) {
+          transform: rotate(0deg);
+          animation-delay: -1.1s;
+        }
+        .lds-spinner div:nth-child(2) {
+          transform: rotate(30deg);
+          animation-delay: -1s;
+        }
+        .lds-spinner div:nth-child(3) {
+          transform: rotate(60deg);
+          animation-delay: -0.9s;
+        }
+        .lds-spinner div:nth-child(4) {
+          transform: rotate(90deg);
+          animation-delay: -0.8s;
+        }
+        .lds-spinner div:nth-child(5) {
+          transform: rotate(120deg);
+          animation-delay: -0.7s;
+        }
+        .lds-spinner div:nth-child(6) {
+          transform: rotate(150deg);
+          animation-delay: -0.6s;
+        }
+        .lds-spinner div:nth-child(7) {
+          transform: rotate(180deg);
+          animation-delay: -0.5s;
+        }
+        .lds-spinner div:nth-child(8) {
+          transform: rotate(210deg);
+          animation-delay: -0.4s;
+        }
+        .lds-spinner div:nth-child(9) {
+          transform: rotate(240deg);
+          animation-delay: -0.3s;
+        }
+        .lds-spinner div:nth-child(10) {
+          transform: rotate(270deg);
+          animation-delay: -0.2s;
+        }
+        .lds-spinner div:nth-child(11) {
+          transform: rotate(300deg);
+          animation-delay: -0.1s;
+        }
+        .lds-spinner div:nth-child(12) {
+          transform: rotate(330deg);
+          animation-delay: 0s;
+        }
+        @keyframes lds-spinner {
+          0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+        
+        form[name="forma1"] {
+              display:{{dif1}};
+              width:50%;
+              margin:0 auto;
+              padding: 20px;
+            }
+        
+        .forma_letovi{
+          background-color: #0D6EFD;
+          width: 300px;
+          border: 15px;
+          border-radius: 20px;
+          padding: 40px;
+          margin: 20px;
+          opacity: .85;
+          display:{{dif2}};
+        }
+
+        #near{
+          display:{{dif3}};
+        }
+        
+        #sort{
+          display:{{dif4}};
+        }
+        #sub{
+          background-color: #FFFFFF;
+          border: 2px solid #555555;
+          color: black;
+          padding: 8px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 4px;
+        }
+    </style>
+
+
+  </head>
+  
+  <body>
+    <div class="bg">
+    <a id="near" class="btn btn-primary" href="/map" role="button">Prikaži na karti najbliže aerodrome polaznom</a>
+
+
+    <form name="forma1" class="text-center" method="post" action="/" >
+        <input class="btn btn-primary " type="submit" value="Pretraži letove" name="action1"/>
+    </form>
+
+
+    <h1>{{pretraga}}</h1>
+    <div class="lds-facebook"><div></div><div></div><div></div></div>
+    <div class="container-fluid">
+        <div name="unesena_forma2">
+            
+            <h2>Uneseni podaci:</h2>
+            <p>Polazni_aerodrom: {{Polazni_aerodrom}}</p>
+            <p>Odredisni_aerodrom: {{Odredisni_aerodrom}}</p>
+            <p>Datum_polaska: {{Datum_polaska}}</p>
+            <p>Datum_povratka: {{Datum_povratka}}</p>
+            <p>Broj_odraslih_putnika: {{Broj_odraslih_putnika}}</p>
+        </div>
+        <div class="forma_letovi">
+            <form name="forma2" action="/" method = "POST">
+                <p>Polazni aerodrom <input type = "text" name = "Field1_name" placeholder="IATA kod aerodroma"/></p>
+                <p>Odredišni aerodrom <input type = "text" name = "Field2_name" placeholder="IATA kod aerodroma"/></p>
+                <p>Datum polaska <input type = "date" name = "Field3_name" /></p>
+                <p>Datum povratka <input type = "date" name = "Field32_name" /></p>
+                <p>Broj odraslih putnika <input type = "text" name = "Field4_name" /></p>
+                <p><input id="sub" type = "submit" name="submit_button" value = "submit" onclick="loading();"/></p>
+        </div>
+ 
+
+        <div id="loading" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="dropdown text-center">
+              <button id="sort" type="button" class="btn btn-primary dropdown-toggle " data-bs-toggle="dropdown">
+                Sortiraj po
+              </button>
+              <ul class="dropdown-menu">
+                <form name="forma1" method="post" action="/" >
+                    <li><input class="dropdown-item" type="submit" value="Po cijeni silazno" name="action2"/></li>
+                    <li><input class="dropdown-item" type="submit" value="Po cijeni uzlazno" name="action2"/></li>
+                    <li><input class="dropdown-item" type="submit" value="Po broju presjedanja silazno" name="action2"/></li>
+                    <li><input class="dropdown-item" type="submit" value="Po broju presjedanja uzlazno" name="action2"/></li>
+                </form>
+              </ul>
+            </div>
+          <div id="content" class="table-responsive">
+
+              {{podaci | safe}}
+
+
+          </div>
+        </div>
+    </div>
+    </body>
+  
+</html>
